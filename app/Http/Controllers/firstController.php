@@ -26,7 +26,12 @@ class firstController extends Controller
     	return view('pharmacy.login');
     }
     public function adminLogin(){
-    	return view('admin.login');
+    	if(Session('adminlog')=='admin'){
+            return view('admin.homeAdmin.homeAdmin');
+            }
+        else{
+           return view('admin.login');
+       }
     }
    
 }

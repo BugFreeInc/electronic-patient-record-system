@@ -20,11 +20,25 @@ Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
 
 //Login section start
+
 Route::get('/doctorLogin','firstController@doctorLogin');
 Route::get('/patientLogin','firstController@patientLogin');
 Route::get('/pharmacyLogin','firstController@pharmacyLogin');
 Route::get('/adminLogin','firstController@adminLogin');
 //Login section End
+
+//Admin section start
+Route::post('/checkadmin','adminController@logincheck');
+Route::get('/adminHome','adminController@home');
+Route::get('/addDoctor','adminController@dradd');
+Route::post('/addingDr','adminController@saveingDoctor');
+Route::get('/doctorList','adminController@drlist');
+Route::get('/addPharmacy','adminController@pharmacyAdd');
+Route::post('/addingPharmacy','adminController@savingPharmacy');
+Route::get('/pharmacyList','adminController@pharmacyList');
+Route::get('/adminLogout','adminController@logout');
+
+//Admin section end
 
 //Doctor section start
 Route::get('/doctorHomepage','doctorController@doctor');
@@ -42,13 +56,6 @@ Route::get('/buyingHistory','patientController@buyingHistory');
 
 //Patient section end
 
-//Admin section start
-Route::get('/adminHome','adminController@home');
-Route::get('/addDoctor','adminController@dradd');
-Route::get('/doctorList','adminController@drlist');
-Route::get('/addPharmacy','adminController@pharmacyAdd');
-Route::get('/pharmacyList','adminController@pharmacyList');
 
-//Admin section end
 
 

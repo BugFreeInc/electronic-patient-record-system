@@ -17,4 +17,7 @@ class doctorController extends Controller
     	return view('doctor.home.patientHistory');
     	
     }
+    
+
+    
 }

@@ -38,7 +38,6 @@
               <span>Patient</span>
               </a>
             <ul class="sub">
-              <li><a href="blank.html">Add Patient</a></li>
               <li><a href="login.html">List Patient</a></li>
               
             </ul>
@@ -49,7 +48,7 @@
             <a class="active" href="inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Mail </span>
-              <span class="label label-theme pull-right mail-info">3</span>
+              <span class="label label-theme pull-right mail-info">30</span>
               </a>
           </li>
          

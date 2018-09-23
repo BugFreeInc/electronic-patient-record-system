@@ -37,12 +37,17 @@
     </div>
     <div class="tab-content">
         <div id="login" class="tab-pane active">
-            <form action="index.html" class="form-signin">
+            <form action="{{url('/checkadmin')}}" method="POST" class="form-signin">
+            @csrf
+            @if(session('adminlog'))
+           <p class="alert alert-danger">{{session('adminlog')}}</p>
+           @endif
+
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">
-                    Enter your username and password
+                    Enter Your Username and Password
                 </p>
-                <input type="text" placeholder="Username" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
+                <input type="text" placeholder="Username" name="name" class="form-control" />
+                <input type="password" placeholder="Password" name="password" class="form-control" />
                 <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
             </form>
         </div>
