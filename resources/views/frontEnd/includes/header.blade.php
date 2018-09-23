@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 				  </button>
 					<div class="logo">
-						<h1><a class="navbar-brand" href="index.html"><img src="{{asset('frontEnd/images/logo.png')}}" alt="Medicinal"></a></h1>
+						<h1><a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('frontEnd/images/logo.png')}}" alt="Medicinal"></a></h1>
 					</div>
 				</div>
 
@@ -18,7 +18,7 @@
 					<nav class="menu menu--sebastian">
 					<ul id="m_nav_list" class="m_nav menu__list">
 						<li class="m_nav_item menu__item menu__item--current" id="m_nav_item_1"> <a href="{{url('/')}}" class="menu__link"> Home </a></li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="about.html" class="menu__link"> About Us </a> </li>		
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="{{ url('/about') }}" class="menu__link"> About Us </a> </li>		
 					
 						<li class="m_nav_item menu__item" id="moble_nav_item_3 dropdown"> <a href="#" class="menu__link dropdown-toggle" data-toggle="dropdown">Log In  <b class="caret"></b></a> 
 						   <ul class="dropdown-menu agile_short_dropdown">
@@ -30,7 +30,7 @@
 						</li>
 					
 						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="{{url('/contact')}}" class="menu__link"> Contact </a> </li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="contact.html" class="menu__link"> Notice </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="{{ url('/notice') }}" class="menu__link"> Notice </a> </li>
 					</ul>
 				</nav>
 

@@ -57,9 +57,8 @@
          <div id="signup" class="tab-pane">
             <form action="index.html" class="form-signin">
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
-                 <input type="text" placeholder="First Name" class="form-control" />
-                 <input type="text" placeholder="Last Name" class="form-control" />
-                <input type="text" placeholder="Username" class="form-control" />
+                 <input type="text" placeholder="Patient Name" class="form-control" />
+                 <input type="text" placeholder="NID No." class="form-control" />
                 <input type="email" placeholder="Your E-mail" class="form-control" />
                 <input type="password" placeholder="password" class="form-control" />
                 <input type="password" placeholder="Re type password" class="form-control" />

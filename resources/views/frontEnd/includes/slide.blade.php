@@ -8,7 +8,7 @@
 									<div class="agileits-banner-info">
 									<span>Health Plus</span>
 									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>Doctor will checkup his patient and prescript the patient through our project(EPRS).</p>
 									
 								</div>	
 							</div>
@@ -20,7 +20,7 @@
 								<div class="agileits-banner-info">
 								 <span>Real</span>
 									<h3>Free Consultation </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>The record of patient will be enter according  to patient id card.</p>
 									
 								</div>	
 							</div>
@@ -32,7 +32,7 @@
 								<div class="agileits-banner-info">
 								     <span>Amazing</span>
 									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>When the patient want to buy medicine, the pharmacist will check patient record using his id number.</p>
 									
 								</div>
 								

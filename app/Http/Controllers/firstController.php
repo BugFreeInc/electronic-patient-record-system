@@ -33,5 +33,11 @@ class firstController extends Controller
            return view('admin.login');
        }
     }
+    public function notice(){
+        return view('frontEnd.home.notice');
+    }
+    public function about(){
+        return view('frontEnd.home.about');
+    }
    
 }

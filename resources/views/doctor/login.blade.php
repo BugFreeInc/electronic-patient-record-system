@@ -57,13 +57,16 @@
          <div id="signup" class="tab-pane">
             <form action="index.html" class="form-signin">
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
-                 <input type="text" placeholder="First Name" class="form-control" />
-                 <input type="text" placeholder="Last Name" class="form-control" />
-                <input type="text" placeholder="Username" class="form-control" />
-                <input type="email" placeholder="Your E-mail" class="form-control" />
-                <input type="password" placeholder="password" class="form-control" />
-                <input type="password" placeholder="Re type password" class="form-control" />
-                <button class="btn text-muted text-center btn-success" type="submit">Register</button>
+                 <input type="text" name="" placeholder="Dr. Name" class="form-control" />
+                 <input type="text" name="" placeholder="Register No." class="form-control" />
+                <input type="text" name="" placeholder="Qualification " class="form-control" />
+                <input type="password" name="" placeholder="Specialist" class="form-control" />
+                <input type="email" name="" placeholder="Hospital Name" class="form-control" />
+                <input type="email" name="" placeholder="Position" class="form-control" />
+                <input type="password" name="" placeholder="Type Password" class="form-control" />
+
+                <input type="password" name="" placeholder="Re type password" class="form-control" />
+                <button class="btn text-muted text-center btn-success" name="" type="submit">Register</button>
             </form>
         </div>
         

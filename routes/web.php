@@ -18,6 +18,9 @@ Route::get('/mon', function () {
 /*Hmoe Page*/
 Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
+Route::get('/notice','firstController@notice');
+Route::get('/about','firstController@about');
+
 
 //Login section start
 

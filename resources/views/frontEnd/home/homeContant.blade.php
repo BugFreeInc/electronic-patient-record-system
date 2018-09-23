@@ -1,6 +1,6 @@
 @extends('frontEnd.master') 
 @section('mainContent')
-	<div class="banner-silder">
+		<div class="banner-silder">
 		<div id="JiSlider" class="jislider">
 			<ul>
 				<li>
@@ -10,7 +10,7 @@
 									<div class="agileits-banner-info">
 									<span>Health Plus</span>
 									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>Doctor will checkup his patient and prescript the patient through our project(EPRS).</p>
 									
 								</div>	
 							</div>
@@ -22,7 +22,7 @@
 								<div class="agileits-banner-info">
 								 <span>Real</span>
 									<h3>Free Consultation </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>The record of patient will be enter according  to patient id card.</p>
 									
 								</div>	
 							</div>
@@ -34,7 +34,7 @@
 								<div class="agileits-banner-info">
 								     <span>Amazing</span>
 									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
+									 <p>When the patient want to buy medicine, the pharmacist will check patient record using his id number.</p>
 									
 								</div>
 								
@@ -45,12 +45,12 @@
 			</ul>
 		</div>
       </div>
-      <div class="about" id="about">
+     <div class="about" id="about">
 		<div class="container">
-			<h2 class="w3_heade_tittle_agile">Welcome to our Health Plus</h2>
-			<p class="sub_t_agileits">Add Short Description</p>
+			<h2 class="w3_heade_tittle_agile">Welcome to our EPRS</h2>
+			<p class="sub_t_agileits">About Our Project</p>
 			
-			<p class="ab">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
+			<p class="ab">Doctor will checkup his patient and prescript the patient through our project(EPRS). The record of patient will be enter according  to patient id card. When the patient want to buy medicine, the pharmacist will check patient record using his id number.  If the information is present in database patient can buy medicine. That’s how EPRS can stop misuse of medicine.  </p>
 
 			 <div class="about-w3lsrow"> 
 				
@@ -59,11 +59,11 @@
 				</div> 
 				<div class="col-md-6 col-sm-7 w3about-img two"> 
 					<div class="w3about-text"> 
-						<h5 class="w3l-subtitle">We Care About Your Health</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
+						
+						<p>If the patient goes to other doctor, that doctor can check his previous record. As all data are in database , the cause of disease of patient or death of patient can identify from the data.Our country has163 million people but we don’t  single data warehouse for store medical information which can be useful in medical research .
+</p>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
-						  <div class="read"><a href="single.html" class="hvr-rectangle-in">Read More</a></div>
+						  
 					</div>
 				</div> 
 				<div class="clearfix"> </div>
