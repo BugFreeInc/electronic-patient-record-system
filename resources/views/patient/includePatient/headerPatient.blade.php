@@ -10,19 +10,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/pharmaHomepage')}}">Home</a>
+      <a class="navbar-brand" href="{{url('/prescribeHistory')}}">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       
-         <li><a href="{{url('/prescribeHistory')}}">Prescribe History <span class="sr-only">(current)</span></a></li>
+        
         <li><a href="{{url('/buyingHistory')}}">Buy History</a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><button type="submit" class="btn btn-light" name="logout">Log Out</button></a></li>
+        <li><a href="{{url('/PatientOut')}}"><button type="submit" class="btn btn-light" name="logout">Log Out</button></a></li>
        
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -24,7 +24,9 @@
 
 
 <input type="text" id="myInput"  placeholder="Search for names.."  class="form-control">
-
+@if(session('ck'))
+{{session('ck')}}
+@endif
 <br><br>
 <table class="table table-bordered">
   <thead>

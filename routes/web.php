@@ -72,7 +72,10 @@ Route::get('/sellhistory','pharmacyController@pharmaSellhistory');
 
 //Patient section start
 Route::get('/prescribeHistory','patientController@prescribeHistory');
+Route::post('/signingPatient','patientController@SavingPatient');
+Route::post('/checkPatient','patientController@PatientLogin');
 Route::get('/buyingHistory','patientController@buyingHistory');
+Route::get('/PatientOut','patientController@logout');
 
 //Patient section end
 

@@ -16,58 +16,35 @@
 <br>
 <table class="table table-bordered">
   <thead>
+  @if(isset($pres))
+  {{$pres}}
+    
+@endif
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
+      <th>Disease Name</th>
+      <th>Medicine Info</th>
+      <th>Checkup By</th>
+      <th>Date</th>
+      
     </tr>
   </thead>
   <tbody id="myTable">
   
-    <tr>
-      <td>Tiger Nixon</td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011/04/25</td>
-      <td>$320,800</td>
-    </tr>
-    <tr>
-      <td>Garrett Winters</td>
-      <td>Accountant</td>
-      <td>Tokyo</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$172,750</td>
-    </tr>
-   
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@mail.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@greatstuff.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
-    <tr>
-      <td>Anja</td>
-      <td>Ravendale</td>
-      <td>a_r@test.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
+    
+    @if (isset($data))
+    @foreach($data as $userData)
+	  <tr>
+		<td>{{$userData->Diseaseinfo}}</td>
+    <td>{!! $userData->Medicine!!}</td>
+    <td>{{$userData->DrName}}</td>
+    <td>{{$userData->Date}}</td>
+
+	</tr>
+
+@endforeach
+@endif
+    
+    
   </tbody>
 </table>
 
