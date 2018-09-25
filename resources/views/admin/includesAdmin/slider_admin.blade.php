@@ -45,10 +45,17 @@
         
          
           <li>
-            <a class="active" href="inbox.html">
+            <a  href="inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Mail </span>
-              <span class="label label-theme pull-right mail-info">30</span>
+              <span class="label label-theme pull-right mail-info">
+              
+              @if(session('sms')>0)
+                      {{session('sms')}}
+              @else 
+                      no new mail
+              @endif
+              </span>
               </a>
           </li>
          

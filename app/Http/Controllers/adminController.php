@@ -6,12 +6,16 @@ use Illuminate\Http\Request;
 use Session;
 use App\addingDoctor;
 use App\addingPharmacy;
+use App\contact;
 use Mail;
 class adminController extends Controller
 {
    public function home(){
+    
     if(Session('adminlog')=='admin')
     {
+        $sms=contact::count();
+        Session::put('sms',$sms);
         return view('admin.homeAdmin.homeAdmin');
         }
     else{
@@ -75,7 +79,9 @@ public function pharmacyList(){
 public function  logincheck(Request $request){
     if($request->name=='admin' && $request->password=='admin'){
       Session::put('adminlog','admin');
-      return redirect('/adminHome');
+      $sms=contact::count();
+      Session::put('sms',$sms);
+    return redirect('/adminHome');
     }
     else{
         return redirect('/adminLogin')->with('adminlog','Username or password is wrong!');
@@ -83,6 +89,7 @@ public function  logincheck(Request $request){
 }
 public function logout(){
     session()->forget('adminlog');
+
     return redirect('/');
 }
 //////////////////////data/////////////////////

@@ -35,11 +35,11 @@ $(document).ready(function () {
         var newRow = $("<tr>");
         var cols = "";
 
-        cols += '<td><input type="text" class="form-control" name="name' + counter + '"/></td>';
-        cols += '<td><input type="text" class="form-control" name="mail' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="Medname' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="Dogeperday' + counter + '"/></td>';
         
-        cols += '<td><select class="form-control" name="select' + counter + '"><option value="volvo">Before Eat</option><option value="saab">After Eat</option></select></td>';
-        cols += '<td><input type="text" class="form-control" name="phone' + counter + '"/></td>';
+        cols += '<td><select class="form-control" name="select' + counter + '"><option value="Before Eat">Before Eat</option><option value="After Eat">After Eat</option></select></td>';
+        cols += '<td><input type="text" class="form-control" name="duration' + counter + '"/></td>';
 
         cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
         newRow.append(cols);

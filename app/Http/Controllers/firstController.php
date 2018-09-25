@@ -3,30 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\contact;
+use Session;
 
 class firstController extends Controller
 {
 	public function contact(){
     	return view('frontEnd.home.contact');
     }
+    public function storeQuary(Request $request){
+        contact::create($request->all());  
+        return redirect('/contact')->with('quary','Your Quary Successfully Store , We will replay you soon');
 
-
-
+    }
 
     public function index(){
     	return view('frontEnd.home.homeContant');
     }
     public function doctorLogin(){
-    	return view('doctor.login');
+        if(Session('pass')=='ok'){
+            return view('doctor.home.home');
+            }
+        else{
+            return view('doctor.login');
+       }  
+    	
+    
+    
     }
     public function patientLogin(){
     	return view('patient.login');
     }
     public function pharmacyLogin(){
-    	return view('pharmacy.login');
+        if(Session('Ppass')=='ok'){
+            return view('pharmacy.homePharma.homePharma');
+            }
+        else{
+            return view('pharmacy.login');
+       }  
+    	
+
+
+    	
     }
     public function adminLogin(){
     	if(Session('adminlog')=='admin'){
+            $sms=contact::count();
+            Session::put('sms',$sms);
             return view('admin.homeAdmin.homeAdmin');
             }
         else{

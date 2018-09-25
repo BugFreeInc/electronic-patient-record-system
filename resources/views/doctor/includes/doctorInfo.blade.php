@@ -1,8 +1,8 @@
 <section id="doctorinfo" class="text-center">
         <div class="container">
-            <h3>Dr.Name</h3>
-            <h4>MBBS,MD(Medicin)</h4>
-            <h4>Reg.No:1234</h4>
-            <h4>Assistant Profesor,BBMU</h4>
+            <h3>{{Session('DrName')}}</h3>
+            <h4>{{Session('DrQa')}}</h4>
+            <h4>{{Session('DrID')}}</h4>
+            <h4>{{Session('DrSpec')}}</h4>
         </div>
     </section>

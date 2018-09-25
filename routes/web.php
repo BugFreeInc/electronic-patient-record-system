@@ -18,6 +18,7 @@ Route::get('/mon', function () {
 /*Hmoe Page*/
 Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
+Route::post('/saveQuary','firstController@storeQuary');
 Route::get('/notice','firstController@notice');
 Route::get('/about','firstController@about');
 
@@ -45,14 +46,30 @@ Route::get('/adminLogout','adminController@logout');
 
 //Doctor section start
 Route::get('/doctorHomepage','doctorController@doctor');
+Route::post('/signupDr','doctorController@Signupdoctor');
+Route::post('/checkDr','doctorController@checkDoctor');
 Route::get('/generalPrescribe','doctorController@generalPrescribe');
+Route::post('/saveprescribtion','doctorController@SavePrescribtion');
 Route::get('/patientHistory','doctorController@patientHistory');
+Route::get('/DrOut','doctorController@logout');
+Route::post('/showPres','doctorController@ShowPatientHistory');
 //Doctor section end
+
+
+
 //Pharma section start
+Route::post('/signingPharmacy','pharmacyController@SavePharma');
+Route::post('/checkPharma','pharmacyController@CheckPharma');
+Route::post('/ShowPresPharma','pharmacyController@ShowPatientHistory');
+Route::post('/ShowMed','pharmacyController@ShowMed');
+Route::post('/SellMed','pharmacyController@SellMedicine');
 Route::get('/pharmaHomepage','pharmacyController@index');
+Route::get('/outPharma','pharmacyController@logout');
 Route::get('/sellmedicine','pharmacyController@pharmaSellmedicine');
 Route::get('/sellhistory','pharmacyController@pharmaSellhistory');
 //Pharma section end
+
+
 //Patient section start
 Route::get('/prescribeHistory','patientController@prescribeHistory');
 Route::get('/buyingHistory','patientController@buyingHistory');

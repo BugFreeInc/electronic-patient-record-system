@@ -36,13 +36,31 @@
         <img src="{{asset('doctor/assets/img/doctorlogo.jpg')}}" id="logoimg" alt=" Logo" />
     </div>
     <div class="tab-content">
+              
         <div id="login" class="tab-pane active">
-            <form action="index.html" class="form-signin">
+            <form action="{{url('/checkDr')}}" class="form-signin" method="POST">
+            @csrf
+            @if(count($errors)>0)
+                @foreach($errors->all() as $error )
+               <p class="alert alert-danger">{{$error}}</p>
+                @endforeach
+                 @endif
+                
+                
+                 @if(session('status'))
+                <p class="alert alert-danger">{{session('status')}}</p>
+                 {{Session::forget('Status')}}
+                  @endif
+
+              @if(session('signup'))
+              <p class="alert alert-success">{{session('signup')}}</p>
+             
+               @endif
+
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">
-                    Enter your username and password
-                </p>
-                <input type="text" placeholder="Username" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
+                    Enter your username and password   </p>
+                <input type="text" name="RegID" placeholder="ID No." class="form-control" required />
+                <input type="password" name="password" placeholder="Password" class="form-control" required />
                 <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
             </form>
         </div>
@@ -55,17 +73,23 @@
             </form>
         </div>
          <div id="signup" class="tab-pane">
-            <form action="index.html" class="form-signin">
+            <form action="{{url('/signupDr')}}" class="form-signin" method="POST">
+            @csrf
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
-                 <input type="text" name="" placeholder="Dr. Name" class="form-control" />
-                 <input type="text" name="" placeholder="Register No." class="form-control" />
-                <input type="text" name="" placeholder="Qualification " class="form-control" />
-                <input type="password" name="" placeholder="Specialist" class="form-control" />
-                <input type="email" name="" placeholder="Hospital Name" class="form-control" />
-                <input type="email" name="" placeholder="Position" class="form-control" />
-                <input type="password" name="" placeholder="Type Password" class="form-control" />
+                @if(count($errors)>0)
+                @foreach($errors->all() as $error )
+               <p class="alert alert-danger">{{$error}}</p>
+                @endforeach
+                 @endif
+                 <input type="text" name="name" placeholder="Dr. Name" class="form-control" />
+                 <input type="text" name="RegID" placeholder="Register No." class="form-control" />
+                <input type="text" name="Qualification" placeholder="Qualification " class="form-control" />
+                <input type="text" name="Specialist" placeholder="Specialist" class="form-control" />
+                
+                <input type="email" name="email" placeholder="Email" class="form-control" />
+                <input type="password" name="password" placeholder="Type Password" class="form-control" />
 
-                <input type="password" name="" placeholder="Re type password" class="form-control" />
+                <input type="password" name="password_confirmation" placeholder="Re type password" class="form-control" />
                 <button class="btn text-muted text-center btn-success" name="" type="submit">Register</button>
             </form>
         </div>

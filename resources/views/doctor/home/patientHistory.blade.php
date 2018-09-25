@@ -5,17 +5,17 @@
     <div class="container">
     <div class="row">
         <div class="col-md-4">
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" method="POST" action="{{url('/showPres')}}">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
+  @csrf
+    <input type="text" class="form-control" placeholder="Search by NID" name="nid">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
 <ul>
-    <li><h3>Doctor 1</h3></li>
-    <li><h3> Doctor 2</h3></li>
-    <li><h3>Doctor 3</h3> </li>
+    <li><h3>Patiant Name</h3></li>
+    
 </ul>
         </div>
         <div class="col-md-8">
@@ -29,57 +29,32 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
+      <th>Disease</th>
+      <th>Checkup By</th>
+      <th>Date</th>
+      <th>Action</th>
+      
+      
     </tr>
   </thead>
   <tbody id="myTable">
-  
-    <tr>
-      <td>Tiger Nixon</td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011/04/25</td>
-      <td>$320,800</td>
-    </tr>
-    <tr>
-      <td>Garrett Winters</td>
-      <td>Accountant</td>
-      <td>Tokyo</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$172,750</td>
-    </tr>
-   
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@mail.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@greatstuff.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
-    <tr>
-      <td>Anja</td>
-      <td>Ravendale</td>
-      <td>a_r@test.com</td>
-      <td>63</td>
-      <td>2011/07/25</td>
-      <td>$170,750</td>
-    </tr>
+
+  @if (isset($data))
+    @foreach($data as $userData)
+	  <tr>
+		<td>{{$userData->Diseaseinfo}}</td>
+		<td>{{$userData->DrName}}</td>
+		<td>{{$userData->Date}}</td>
+		<td><a href="{{url('/showFullPres/'.$userData->id)}}">Show</a></td>
+	
+
+
+
+	</tr>
+
+@endforeach
+@endif
+    
   </tbody>
 </table>
 
