@@ -43,7 +43,17 @@
             </ul>
           </li>
         
-         
+         <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fa fa-file-text"></i>
+
+              <span>Notice</span>
+              </a>
+            <ul class="sub">
+              <li><a href="{{ url('/adminNoticeAdd') }}">Add Notice</a></li>
+              <li><a href="{{ url('/adminNoticeList') }}">Notice List</a></li>
+            </ul>
+          </li>
           <li>
             <a  href="inbox.html">
               <i class="fa fa-envelope"></i>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\contact;
 use Session;
-
+use App\adminNotice;
+use DB;
 class firstController extends Controller
 {
 	public function contact(){
@@ -57,8 +58,23 @@ class firstController extends Controller
        }
     }
     public function notice(){
-        return view('frontEnd.home.notice');
+
+        
+      $notices=adminNotice::all();
+      return view('frontEnd.home.notice',['notices'=>$notices]);
+       
     }
+        public function noticeView($id){
+      $noticeById = DB::table('admin_notices')
+                
+                ->select('admin_notices.*')
+                ->where('admin_notices.id', $id)
+                ->first();
+        return view('frontEnd.home.noticeById', ['notice'=>$noticeById]);
+
+    }
+       
+    
     public function about(){
         return view('frontEnd.home.about');
     }
