@@ -7,9 +7,7 @@ use Session;
 use App\addingDoctor;
 use App\addingPharmacy;
 use App\contact;
-use App\adminNotice;
 use Mail;
-use DB;
 class adminController extends Controller
 {
    public function home(){
@@ -143,72 +141,5 @@ public function Phvalidation($request){
           'email' => 'required|email|unique:addingPharmacys|max:255',      
       ]);
   }
-
-
-     public function adminNoticeAdd(){
-        return view('admin.notice.noticeAdd');
-    }
-public function adminNoticeSave(Request $request){
-
-$this->validate($request,['noticeSubject'=>'required','noticeMassage'=>'required']);
-
-DB::table('admin_notices')->insert([
-'noticeSubject'=>$request->noticeSubject,
-'noticeMassage'=>$request->noticeMassage,
-]);
-
-
-return redirect('/adminNoticeAdd')->with('message','Notice save successfully');
-}
- 
-     public function adminNoticeList(){
-        
-      $admin_notices=adminNotice::all();
-      return view('admin.notice.noticeList',['admin_notices'=>$admin_notices]);
-       
-    }
-    public function adminNoticeView($id){
-      $noticeById = DB::table('admin_notices')
-                
-                ->select('admin_notices.*')
-                ->where('admin_notices.id', $id)
-                ->first();
-        return view('admin.notice.noticeViewByid', ['notice'=>$noticeById]);
-
-    }
-        public function adminNoticeEdit($id){
-       $noticeEditById=adminNotice::where('id',$id)->first();
-        return view('admin.notice.noticeEditByid',['noticeEditById'=>$noticeEditById]);
-
-    }
-    public function adminNoticeUpdate(Request $request){
-
-
-$adminUpdate= adminNotice::find($request->noticeId);//noticeId Edit Hidden input Name
-$adminUpdate->noticeSubject=$request->noticeSubject;
-$adminUpdate->noticeMassage=$request->noticeMassage;
-$adminUpdate->save();
-       
-
-
-return redirect('/adminNoticeList')->with('message','Notice Update successfully');
-
-
-    }
-        public function adminNoticeDelete($id){
-       // dd($request->all());
-        $notyice= adminNotice::find($id);
-
-        $notyice->delete();
-return redirect('/adminNoticeList')->with('message','category info delete successfully');
-
-
-    }
-
-
-
-
-
-
 
 }
