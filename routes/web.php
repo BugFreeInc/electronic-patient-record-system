@@ -20,7 +20,6 @@ Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
 Route::post('/saveQuary','firstController@storeQuary');
 Route::get('/notice','firstController@notice');
-Route::get('/notice/view/{id}','firstController@noticeView');
 Route::get('/about','firstController@about');
 
 
