@@ -205,6 +205,7 @@ return redirect('/adminNoticeList')->with('message','category info delete succes
 
     }
 
+<<<<<<< HEAD
     public function adminMail(){
        $admin_mail=contact::all();
       return view('admin.mail.mailList',['admin_mail'=>$admin_mail]);
@@ -235,6 +236,9 @@ return redirect('/adminNoticeList')->with('message','category info delete succes
 
       
     }
+=======
+
+>>>>>>> 3d4f9d6eed4717944eddbca045729f88c785b53a
 
 
 

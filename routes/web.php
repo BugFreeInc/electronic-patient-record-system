@@ -49,10 +49,13 @@ Route::get('/adminNoticeList/view/{id}','adminController@adminNoticeView');
 Route::get('/adminNoticeList/edit/{id}','adminController@adminNoticeEdit');
 Route::post('/adminNoticeAdd/update','adminController@adminNoticeUpdate');
 Route::get('/adminNotice/delete/{id}','adminController@adminNoticeDelete');
+<<<<<<< HEAD
 Route::get('/adminMail','adminController@adminMail');
 Route::get('/adminMail/view/{id}','adminController@adminMailView');
 Route::get('/adminMail/replay/{id}','adminController@adminMailReplay');
 Route::get('/adminMail/replay/send','adminController@adminMailReplaySend');
+=======
+>>>>>>> 3d4f9d6eed4717944eddbca045729f88c785b53a
 
 //Admin section end
 

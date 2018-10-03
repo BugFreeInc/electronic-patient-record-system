@@ -35,7 +35,14 @@
             
             <td>
                 <a href="{{ url('/adminNoticeList/view/'.$notice->id) }}" class="btn btn-info" title="Notice View">
+<<<<<<< HEAD
                     <span class="glyphicon glyphicon-eye-open"></span>
+=======
+<<<<<<< HEAD
+                    <span class="glyphicon glyphicon-eye-open"></span>
+=======
+                    <span class="glyphicon glyphicon-info-sign"></span>
+>>>>>>> 3d4f9d6eed4717944eddbca045729f88c785b53a
                 </a>
                 <a href="{{ url('/adminNoticeList/edit/'.$notice->id) }}" class="btn btn-success" title="Notice Edit">
                     <span class="glyphicon glyphicon-edit"></span>
