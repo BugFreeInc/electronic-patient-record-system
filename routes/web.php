@@ -20,6 +20,7 @@ Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
 Route::post('/saveQuary','firstController@storeQuary');
 Route::get('/notice','firstController@notice');
+Route::get('/notice/view/{id}','firstController@noticeView');
 Route::get('/about','firstController@about');
 
 
@@ -41,6 +42,17 @@ Route::get('/addPharmacy','adminController@pharmacyAdd');
 Route::post('/addingPharmacy','adminController@savingPharmacy');
 Route::get('/pharmacyList','adminController@pharmacyList');
 Route::get('/adminLogout','adminController@logout');
+Route::get('/adminNoticeAdd','adminController@adminNoticeAdd');
+Route::post('/adminNoticeAdd/save','adminController@adminNoticeSave');
+Route::get('/adminNoticeList','adminController@adminNoticeList');
+Route::get('/adminNoticeList/view/{id}','adminController@adminNoticeView');
+Route::get('/adminNoticeList/edit/{id}','adminController@adminNoticeEdit');
+Route::post('/adminNoticeAdd/update','adminController@adminNoticeUpdate');
+Route::get('/adminNotice/delete/{id}','adminController@adminNoticeDelete');
+Route::get('/adminMail','adminController@adminMail');
+Route::get('/adminMail/view/{id}','adminController@adminMailView');
+Route::get('/adminMail/replay/{id}','adminController@adminMailReplay');
+Route::get('/adminMail/replay/send','adminController@adminMailReplaySend');
 
 //Admin section end
 
