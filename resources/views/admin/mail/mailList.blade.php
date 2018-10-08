@@ -6,12 +6,13 @@
        <div class="col-sm-9">
         <header class="panel-heading wht-bg">
                 <h4 class="gen-case text-center" >
-                    Mail List View
-                    
+                  New Replayable Mail List 
                   
                   </h4>
               </header>  
-
+              @if(session('mailsent'))
+                      <p class="alert alert-danger">{{session('mailsent')}}</p>
+             @endif
 
 <table class="table table-bordered table-hover">
     <thead>

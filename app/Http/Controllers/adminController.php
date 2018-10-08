@@ -152,11 +152,7 @@ public function adminNoticeSave(Request $request){
 
 $this->validate($request,['noticeSubject'=>'required','noticeMassage'=>'required']);
 
-DB::table('admin_notices')->insert([
-'noticeSubject'=>$request->noticeSubject,
-'noticeMassage'=>$request->noticeMassage,
-]);
-
+adminNotice::create($request->all());  
 
 return redirect('/adminNoticeAdd')->with('message','Notice save successfully');
 }
@@ -205,7 +201,6 @@ return redirect('/adminNoticeList')->with('message','category info delete succes
 
     }
 
-<<<<<<< HEAD
     public function adminMail(){
        $admin_mail=contact::all();
       return view('admin.mail.mailList',['admin_mail'=>$admin_mail]);
@@ -231,14 +226,26 @@ return redirect('/adminNoticeList')->with('message','category info delete succes
 
     }
 
-    public function adminMailReplaySend(){
+    public function adminMailReplaySend(Request $request){
+
+    //mail
+    $maildata=$request->toArray();
+    Mail::send([],$maildata,function($massage) use ($maildata)
+    {
+    $massage->to($maildata['email']); 
+    $massage->subject($maildata['subject']); 
+    $massage->setBody("<h3>".$maildata['body']."</h3>", 'text/html');
+    });
+//mail
+  
+    contact::find($request->id)->delete();
+    $sms=contact::count();
+    Session::put('sms',$sms);
+
+return redirect('/adminMail')->with('mailsent','Reply Successfully sent');
 
 
-      
-    }
-=======
-
->>>>>>> 3d4f9d6eed4717944eddbca045729f88c785b53a
+}
 
 
 

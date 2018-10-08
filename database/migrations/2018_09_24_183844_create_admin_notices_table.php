@@ -15,7 +15,6 @@ class CreateAdminNoticesTable extends Migration
     {
         Schema::create('admin_notices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('NoticeID');
             $table->text('noticeSubject');
             $table->text('noticeMassage');
             $table->timestamps();
