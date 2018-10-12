@@ -17,18 +17,18 @@
 <table class="table table-bordered" >
   <thead class="text-center">
     <tr>
-      <th>Lisence No:</th>
-      <th>Owner Name</th>
-      <th>Owner Email</th>
+      <th>Patient NID</th>
+      <th>Patient Name</th>
+      <th>Patient Email</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody id="myTable">
-   @foreach($Pharmacy_list as $phList)
+   @foreach($Patient_list as $patientList)
     <tr>
-      <td>{{ $phList->RegID }}</td>
-      <td>{{ $phList->OwnerName }}</td>
-      <td>{{ $phList->email }}</td>
+      <td>{{ $patientList->nid }}</td>
+      <td>{{ $patientList->name }}</td>
+      <td>{{ $patientList->email }}</td>
       
       <td>
                 <a href="" class="btn btn-info" title="Product View">

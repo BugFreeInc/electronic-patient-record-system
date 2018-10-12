@@ -41,6 +41,7 @@ Route::get('/doctorList','adminController@drlist');
 Route::get('/addPharmacy','adminController@pharmacyAdd');
 Route::post('/addingPharmacy','adminController@savingPharmacy');
 Route::get('/pharmacyList','adminController@pharmacyList');
+Route::get('/patientList','adminController@patientList');
 Route::get('/adminLogout','adminController@logout');
 Route::get('/adminNoticeAdd','adminController@adminNoticeAdd');
 Route::post('/adminNoticeAdd/save','adminController@adminNoticeSave');
@@ -65,6 +66,8 @@ Route::post('/saveprescribtion','doctorController@SavePrescribtion');
 Route::get('/patientHistory','doctorController@patientHistory');
 Route::get('/DrOut','doctorController@logout');
 Route::post('/showPres','doctorController@ShowPatientHistory');
+Route::get('/dr/resetPassword/CodeVerification','doctorController@passwordResetCode');
+Route::post('/dr/resetPassword/showPage','doctorController@passwordReset');
 //Doctor section end
 
 
@@ -79,6 +82,9 @@ Route::get('/pharmaHomepage','pharmacyController@index');
 Route::get('/outPharma','pharmacyController@logout');
 Route::get('/sellmedicine','pharmacyController@pharmaSellmedicine');
 Route::get('/sellhistory','pharmacyController@pharmaSellhistory');
+Route::get('/pharmacy/resetPassword/CodeVerification','pharmacyController@passwordResetCode');
+Route::post('/pharmacy/resetPassword/showPage','pharmacyController@passwordReset');
+
 //Pharma section end
 
 
@@ -88,6 +94,10 @@ Route::post('/signingPatient','patientController@SavingPatient');
 Route::post('/checkPatient','patientController@PatientLogin');
 Route::get('/buyingHistory','patientController@buyingHistory');
 Route::get('/PatientOut','patientController@logout');
+Route::get('/patient/resetPassword/CodeVerification','patientController@passwordResetCode');
+Route::post('/patient/resetPassword/showPage','patientController@passwordReset');
+
+
 
 //Patient section end
 

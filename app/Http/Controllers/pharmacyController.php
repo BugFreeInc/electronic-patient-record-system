@@ -209,5 +209,14 @@ class pharmacyController extends Controller
         return redirect('/sellmedicine')->with('sell','Medicine Sold!'); 
      
       }
+       public function passwordResetCode(){
+    return view('pharmacy/resetPass/passowordCode');
+}
+
+      public function passwordReset(){
+        return view('pharmacy/resetPass/passowordReset');
+      }
+
+     
 
 }

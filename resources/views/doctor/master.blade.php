@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="{{asset('doctor/j.js')}}"></script>
-
+<link href="{{asset('frontEnd/images/logo.png')}}" rel="icon">
 <link rel="stylesheet" type="text/css" href="{{asset('doctor/css/bootstrap.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('doctor/css/style.css')}}">
 

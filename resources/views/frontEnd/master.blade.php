@@ -10,6 +10,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-meta-tags-->
+<link href="{{asset('frontEnd/images/logo.png')}}" rel="icon">
 <link href="{{asset('frontEnd/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="{{asset('frontEnd/css/flexslider.css')}}" type="text/css" media="screen" Department="" />
 <link href="{{asset('frontEnd/css/services.css')}}" rel="stylesheet" type="text/css" media="all" />

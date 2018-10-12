@@ -24,15 +24,15 @@
     </tr>
   </thead>
   <tbody id="myTable">
-  
+  @foreach($doctor_list as $drList)
     <tr>
-      <td>Tiger Nixon</td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
+      <td>{{ $drList->RegID }}</td>
+      <td>{{ $drList->name }}</td>
+      <td>{{ $drList->email }}</td>
       
       <td>
                 <a href="" class="btn btn-info" title="Product View">
-                    <span class="glyphicon glyphicon-info-sign"></span>
+                    <span class="glyphicon glyphicon-eye-open"></span>
                 </a>
                 
                 <a href="" title="Product Delete" class="btn btn-danger ">
@@ -40,35 +40,7 @@
                 </a>
             </td> 
     </tr>
-    <tr>
-      <td>Garrett Winters</td>
-      <td>Accountant</td>
-      <td>Tokyo</td>
-      <td>63</td>
-      
-    </tr>
-   
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@mail.com</td>
-      <td>63</td>
-    
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@greatstuff.com</td>
-      <td>63</td>
-      
-    </tr>
-    <tr>
-      <td>Anja</td>
-      <td>Ravendale</td>
-      <td>a_r@test.com</td>
-      <td>63</td>
-    
-    </tr>
+    @endforeach
   </tbody>
 </table>
 

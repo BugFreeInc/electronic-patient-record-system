@@ -8,6 +8,9 @@ use App\addingDoctor;
 use App\addingPharmacy;
 use App\contact;
 use App\adminNotice;
+use App\DoctorInfo;
+use App\PharmacyInfo;
+use App\PatientInfo;
 use Mail;
 use DB;
 class adminController extends Controller
@@ -42,7 +45,8 @@ class adminController extends Controller
    public function drlist(){
     if(Session('adminlog')=='admin')
     {
-        return view('admin.doctorAdmin.listDoctor');
+         $doctor_list= doctorinfo::all();
+      return view('admin.doctorAdmin.listDoctor',['doctor_list'=>$doctor_list]);
         }
     else{
        return view('admin.login');
@@ -67,7 +71,8 @@ class adminController extends Controller
 public function pharmacyList(){
     if(Session('adminlog')=='admin')
     {
-        return view('admin.pharmacyAdmin.phaprmacyList');
+              $Pharmacy_list= pharmacyinfo::all();
+      return view('admin.pharmacyAdmin.phaprmacyList',['Pharmacy_list'=>$Pharmacy_list]);
 
     }
     else{
@@ -246,6 +251,18 @@ return redirect('/adminMail')->with('mailsent','Reply Successfully sent');
 
 
 }
+public function patientList(){
+  if(Session('adminlog')=='admin')
+    {
+              $Patient_list=  patientinfo::all();
+      return view('admin.patientAdmin.patientList',['Patient_list'=>$Patient_list]);
+
+    }
+    else{
+       return view('admin.login');
+      } 
+}
+
 
 
 

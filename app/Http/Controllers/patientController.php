@@ -116,4 +116,11 @@ class patientController extends Controller
     
         return redirect('/');
     }
+    public function passwordResetCode(){
+    return view('patient/resetPass/passowordCode');
+}
+
+    public function passwordReset(){
+      return view('patient/resetPass/passowordReset');
+    }
 }

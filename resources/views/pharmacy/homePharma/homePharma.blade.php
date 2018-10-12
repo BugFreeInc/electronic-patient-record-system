@@ -18,7 +18,7 @@
 {{session('ck') }}
 @endif    </div>
     <div class="col-md-8">
-      patient prescription history
+      Search Prescription History
 
     </div>
     <table class="table table-bordered">

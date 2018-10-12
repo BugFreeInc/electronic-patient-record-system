@@ -63,7 +63,8 @@
             </form>
         </div>
         <div id="forgot" class="tab-pane">
-            <form action="index.html" class="form-signin">
+            <form action="{{ url('/pharmacy/resetPassword/CodeVerification') }}" class="form-signin">
+              {{ csrf_field() }}
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Enter your valid e-mail</p>
                 <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
                 <br />

@@ -172,6 +172,13 @@ public function ShowPatientHistory(Request $request){
 
     } 
 
+public function passwordResetCode(){
+    return view('doctor/resetPass/passowordCode');
+}
+
+public function passwordReset(){
+    return view('doctor/resetPass/passowordReset');
+}
 
 
 

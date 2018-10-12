@@ -38,7 +38,7 @@
               <span>Patient</span>
               </a>
             <ul class="sub">
-              <li><a href="login.html">List Patient</a></li>
+              <li><a href="{{ url('/patientList') }}">List Patient</a></li>
               
             </ul>
           </li>

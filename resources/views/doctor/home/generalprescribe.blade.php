@@ -1,13 +1,17 @@
 @extends('doctor.master') 
 @section('mainContent')
+<br>
 <section id="table">
 <div class='container'>
 <form action="{{url('/saveprescribtion')}}" method="POST">
 @csrf
     <table id='myTable' class='table table-bordered'>
-      @if(session('medicine'))
+     <h3 class="text-center text-success">
+        @if(session('medicine'))
       {{session('medicine')}}
       @endif
+ </h3>
+      
       
     <th colspan="2"><input type="text" name="nid" class="form-control"  placeholder="Patient ID" required></th>
     <th colspan="3"><input type="text" name="Diseaseinfo" class="form-control"  placeholder="Disease Info" required></th></tr>

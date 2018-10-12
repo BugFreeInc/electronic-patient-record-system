@@ -15,9 +15,8 @@
         </div>
         <div class="col-md-8">
             <div class="container">
-         <h3>Patient Name</h3>
-            <h4>PID:1234</h4>
-            <h4>Address</h4>
+         <h3>Total Prescribe Patient</h3>
+           
         </div>
 
   </div>

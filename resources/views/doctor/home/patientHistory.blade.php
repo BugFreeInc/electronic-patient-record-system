@@ -13,10 +13,13 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-<ul>
-    <li><h3>Patiant Name</h3></li>
-    
-</ul>
+<h3 class="text-center text-danger">@if(session('ck'))
+{{session('ck')}}
+@endif
+ </h3>
+        
+
+
         </div>
         <div class="col-md-8">
 
@@ -24,10 +27,7 @@
 
 
 <input type="text" id="myInput"  placeholder="Search for names.."  class="form-control">
-@if(session('ck'))
-{{session('ck')}}
-@endif
-<br><br>
+<br>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -47,7 +47,10 @@
 		<td>{{$userData->Diseaseinfo}}</td>
 		<td>{{$userData->DrName}}</td>
 		<td>{{$userData->Date}}</td>
-		<td><a href="{{url('/showFullPres/'.$userData->id)}}">Show</a></td>
+    <td><a href="{{url('/showFullPres/'.$userData->id)}}" class="btn btn-info" title="History View">
+      <span class="glyphicon glyphicon-eye-open"></span>
+                </a></td>
+		
 	
 
 
