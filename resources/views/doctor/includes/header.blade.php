@@ -18,6 +18,14 @@
       <ul class="nav navbar-nav">
         <li><a href="{{url('/generalPrescribe')}}">General Prescribe <span class="sr-only">(current)</span></a></li>
          <li><a href="{{url('/patientHistory')}}">Patient History</a></li>
+         <li><a onclick="myFunction()">Print this Page</a></li>
+        
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
        
       </ul>
       

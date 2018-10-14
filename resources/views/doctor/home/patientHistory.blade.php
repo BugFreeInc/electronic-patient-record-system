@@ -47,7 +47,7 @@
 		<td>{{$userData->Diseaseinfo}}</td>
 		<td>{{$userData->DrName}}</td>
 		<td>{{$userData->Date}}</td>
-    <td><a href="{{url('/showFullPres/'.$userData->id)}}" class="btn btn-info" title="History View">
+   <td><a href="{{url('/showSinglePres/'.$userData->id)}}" class="btn btn-info" title="History View">
       <span class="glyphicon glyphicon-eye-open"></span>
                 </a></td>
 		

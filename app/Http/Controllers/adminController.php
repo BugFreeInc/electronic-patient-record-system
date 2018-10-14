@@ -53,6 +53,17 @@ class adminController extends Controller
    }
    	
    }
+      public function drdetails($id){
+       $docId = DB::table('doctorinfos')
+                
+                ->select('doctorinfos.*')
+                ->where('doctorinfos.id', $id)
+                ->first();
+        return view('admin.doctorAdmin.doctorByID', ['drview'=>$docId]);
+
+       
+
+}
 
 
    public function pharmacyAdd(){
@@ -263,7 +274,26 @@ public function patientList(){
       } 
 }
 
+public function patientDetails($id){
+  $patientId = DB::table('patientinfos')
+                
+                ->select('patientinfos.*')
+                ->where('patientinfos.id', $id)
+                ->first();
+        return view('admin.patientAdmin.patientByID', ['patientId'=>$patientId]);
 
+}
+
+
+public function pharmacyDetails($id){
+  $pharmaId = DB::table('pharmacyinfos')
+                
+                ->select('pharmacyinfos.*')
+                ->where('pharmacyinfos.id', $id)
+                ->first();
+        return view('admin.pharmacyAdmin.pharmaByID', ['pharmaId'=>$pharmaId]);
+
+}
 
 
 

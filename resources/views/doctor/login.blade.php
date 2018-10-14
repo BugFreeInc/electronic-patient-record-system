@@ -48,12 +48,14 @@
                 
                 
                  @if(session('status'))
-                <p class="alert alert-danger">{{session('status')}}</p>
+                
+                <h3 class="text-center text-danger">{{session('status')}}</h3>
                  {{Session::forget('Status')}}
                   @endif
 
               @if(session('signup'))
-              <p class="alert alert-success">{{session('signup')}}</p>
+              
+              <h3 class="text-center text-success">{{session('signup')}}</h3>
              
                @endif
 

@@ -51,6 +51,9 @@ Route::get('/adminMail','adminController@adminMail');
 Route::get('/adminMail/view/{id}','adminController@adminMailView');
 Route::get('/adminMail/replay/{id}','adminController@adminMailReplay');
 Route::post('/adminMail/replay/send','adminController@adminMailReplaySend');
+Route::get('/dr/details/view/{id}','adminController@drdetails');
+Route::get('/pharmacyDetails/{id}','adminController@pharmacyDetails');
+Route::get('/patientDetails/{id}','adminController@patientDetails');
 
 //Admin section end
 
@@ -68,6 +71,7 @@ Route::get('/DrCheckCode','doctorController@DrCheckCode');
 Route::post('/dr/resetPassword/showPage','doctorController@passwordReset');
 Route::get('/DrShowRepass','doctorController@DrShowRepassword');
 Route::post('/DrUpdatePass','doctorController@DrChangePass');
+Route::get('/showSinglePres/{id}','doctorController@ShowPatientHistoryById');
 //Doctor section end
 
 
