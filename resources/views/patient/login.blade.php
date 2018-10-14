@@ -63,10 +63,10 @@
             </form>
         </div>
         <div id="forgot" class="tab-pane">
-            <form action="{{ url('/patient/resetPassword/CodeVerification') }}" class="form-signin">
+            <form action="{{ url('/patient/resetPassword/CodeVerification') }}" class="form-signin" method="POST">
                   {{ csrf_field() }}
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Enter your valid e-mail </p>
-                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" required />
+                <input type="email" name="email" required="required" placeholder="Your E-mail"  class="form-control" required />
                 <br />
                 <button class="btn text-muted text-center btn-success" type="submit">Recover Password</button>
             </form>

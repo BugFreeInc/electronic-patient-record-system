@@ -43,7 +43,10 @@
                  {{ csrf_field() }}
          <p class="text-muted text-center btn-block btn btn-primary btn-rect">
                     Verify Your Code   </p>
-               
+                    @if(Session('fail'))
+    <p class="alert alert-danger">{{Session('fail')}}</p>
+
+   @endif  
 
                 <input type="text" name="code" placeholder="Verify Code" class="form-control" required />
                

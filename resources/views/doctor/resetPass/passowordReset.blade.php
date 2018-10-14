@@ -39,14 +39,17 @@
     <div class="tab-content">
               
         <div id="login" class="tab-pane active">
-            <form action="{{url('')}}" class="form-signin" method="POST">
+            <form action="{{url('/DrUpdatePass')}}" class="form-signin" method="POST">
               {{ csrf_field() }}
          <p class="text-muted text-center btn-block btn btn-primary btn-rect">
                     Upadate Your Password   </p>
-               
-
+                    @if(count($errors)>0)
+                @foreach($errors->all() as $error )
+               <p class="alert alert-danger">{{$error}}</p>
+                @endforeach
+                 @endif
                 <input type="password" name="password" placeholder="Password" class="form-control" required />
-                <input type="password" name="re-password" placeholder="Re-Password" class="form-control" required />
+                <input type="password" name="password_confirmation" placeholder="Re-Password" class="form-control" required />
                 <button class="btn text-muted text-center btn-danger" type="submit">Update Your Password</button>
             </form>
         </div>

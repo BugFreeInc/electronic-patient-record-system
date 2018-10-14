@@ -13,6 +13,7 @@ use Hash;
 use App\Prescribtion;
 use App\PharmacyInfo;
 use App\SellHistory;
+use App\DoctorCode;
 class pharmacyController extends Controller
 {
     public function index(){
@@ -209,13 +210,135 @@ class pharmacyController extends Controller
         return redirect('/sellmedicine')->with('sell','Medicine Sold!'); 
      
       }
-       public function passwordResetCode(){
-    return view('pharmacy/resetPass/passowordCode');
+       public function passwordResetCode(Request $request ){
+
+        if($data =PharmacyInfo::where('email',$request->email)->first())
+        {
+            if($data->email == $request->email){
+                Session::put('reset','ok');
+                Session::put('Phemail',$data->email);
+                Session::put('PhupID',$data->id);
+                
+                //reset 
+    
+                if($d = DoctorCode::where('email',$request->email)->first()){
+    
+                    $d =  DoctorCode::find($d->id);
+                    $d->delete();
+                    }
+            
+                     $code=rand(100000, 999999);
+                     $tdata=new DoctorCode();
+                       $tdata->email=$request->email;
+                       $tdata->code=bcrypt($code);
+                       $tdata->save();
+                       Session::put('ResetMail',$tdata->email);
+                       Session::put('ResetCode',$code);
+            
+                       //mail
+                      $maildata=$request->toArray();
+                     Mail::send('doctor.resetPass.mail',$maildata,function($massage) use ($maildata)
+                     {
+                     $massage->to($maildata['email']); 
+                     $massage->subject('Reset Your Password'); 
+            
+                     });
+    
+    ////
+        return redirect('/PhCheckCode');
+                
+            }
+        }
+        else{
+            return redirect('/pharmacyLogin')->with('signup','Wrong email'); 
+        } 
+
+    /////return view('pharmacy/resetPass/passowordCode');
+
+
 }
 
-      public function passwordReset(){
-        return view('pharmacy/resetPass/passowordReset');
+public function PhCheckCode(){
+
+    if(Session('reset')=='ok'){
+        return view('pharmacy/resetPass/passowordCode');
+        }
+    else{
+        return redirect('/pharmacyLogin');
+   } 	
+    
+}
+
+
+
+      public function passwordReset(Request $request ){
+        if(Session('reset')=='ok'){
+            if($data =DoctorCode::where('email',Session('ResetMail'))->first()){
+                if(Hash::check($request->code,$data->code)){
+                   
+                 ///
+                 return redirect('/PhShowRepass');
+    
+                }
+                 else{
+        return redirect('/PhCheckCode')->with('fail','Code Does not match '); 
+           
+            }
+            }
+    
+            else{
+        return redirect('/PhCheckCode')->with('fail','Code Does not match '); 
+            }
+            
+            
+            }
+        
+        
+        
+            else{
+                return redirect('/pharmacyLogin');
+       } 
+
+
+        //return view('pharmacy/resetPass/passowordReset');
       }
+
+
+
+      public function PhShowRepassword(){
+
+        if(Session('reset')=='ok'){
+            return view('pharmacy/resetPass/passowordReset');
+            }
+        else{
+            return redirect('/pharmacyLogin');
+       } 	
+        
+    }
+
+
+
+    public function PhChangePass(Request $request){
+        $this->val($request);
+       
+        $tdata=PharmacyInfo::find(Session('PhupID'));
+        $tdata->exists = true;
+        $tdata->id = Session('PhupID'); 
+        $tdata->password=bcrypt($request->password);
+        $tdata->save();
+        session()->forget('PhupID');
+        session()->forget('reset');
+        return redirect('/pharmacyLogin')->with('signup','Password Successfully Changed');
+    
+    
+    }
+    
+    public function val($request){
+            return  $this->Validate($request, [
+                  'password' => 'required|confirmed|max:255',
+                  
+              ]);
+          }
 
      
 

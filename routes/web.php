@@ -11,10 +11,7 @@
 |
 */
 
-/*
-Route::get('/mon', function () {
-    return view('doctor.home.home');
-});*/
+
 /*Hmoe Page*/
 Route::get('/','firstController@index');
 Route::get('/contact','firstController@contact');
@@ -66,8 +63,11 @@ Route::post('/saveprescribtion','doctorController@SavePrescribtion');
 Route::get('/patientHistory','doctorController@patientHistory');
 Route::get('/DrOut','doctorController@logout');
 Route::post('/showPres','doctorController@ShowPatientHistory');
-Route::get('/dr/resetPassword/CodeVerification','doctorController@passwordResetCode');
+Route::post('/dr/resetPassword/CodeVerification','doctorController@passwordResetCode');
+Route::get('/DrCheckCode','doctorController@DrCheckCode');
 Route::post('/dr/resetPassword/showPage','doctorController@passwordReset');
+Route::get('/DrShowRepass','doctorController@DrShowRepassword');
+Route::post('/DrUpdatePass','doctorController@DrChangePass');
 //Doctor section end
 
 
@@ -82,8 +82,12 @@ Route::get('/pharmaHomepage','pharmacyController@index');
 Route::get('/outPharma','pharmacyController@logout');
 Route::get('/sellmedicine','pharmacyController@pharmaSellmedicine');
 Route::get('/sellhistory','pharmacyController@pharmaSellhistory');
-Route::get('/pharmacy/resetPassword/CodeVerification','pharmacyController@passwordResetCode');
+Route::post('/pharmacy/resetPassword/CodeVerification','pharmacyController@passwordResetCode');
+Route::get('/PhCheckCode','pharmacyController@PhCheckCode');
 Route::post('/pharmacy/resetPassword/showPage','pharmacyController@passwordReset');
+Route::get('/PhShowRepass','pharmacyController@PhShowRepassword');
+Route::post('/PhUpdatePass','pharmacyController@PhChangePass');
+
 
 //Pharma section end
 
@@ -94,8 +98,11 @@ Route::post('/signingPatient','patientController@SavingPatient');
 Route::post('/checkPatient','patientController@PatientLogin');
 Route::get('/buyingHistory','patientController@buyingHistory');
 Route::get('/PatientOut','patientController@logout');
-Route::get('/patient/resetPassword/CodeVerification','patientController@passwordResetCode');
+Route::post('/patient/resetPassword/CodeVerification','patientController@passwordResetCode');
+Route::get('/PaCheckCode','patientController@PaCheckCode');
 Route::post('/patient/resetPassword/showPage','patientController@passwordReset');
+Route::get('/PaShowRepass','patientController@PaShowRepassword');
+Route::post('/PaUpdatePass','patientController@PaChangePass');
 
 
 

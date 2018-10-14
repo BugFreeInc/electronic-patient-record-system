@@ -11,6 +11,8 @@ use App\DoctorInfo;
 use Mail;
 use Hash;
 use App\Prescribtion;
+use App\DoctorCode;
+use DB;
 class doctorController extends Controller
 {
      public function doctor(){
@@ -172,16 +174,126 @@ public function ShowPatientHistory(Request $request){
 
     } 
 
-public function passwordResetCode(){
-    return view('doctor/resetPass/passowordCode');
+public function passwordResetCode(Request $request){
+    if($data =DoctorInfo::where('email',$request->email)->first())
+    {
+        if($data->email == $request->email){
+            Session::put('reset','ok');
+            Session::put('Dremail',$data->email);
+            Session::put('DupID',$data->id);
+            
+            //reset 
+
+            if($d = DoctorCode::where('email',$request->email)->first()){
+
+                $d =  DoctorCode::find($d->id);
+                $d->delete();
+                }
+        
+                 $code=rand(100000, 999999);
+                 $tdata=new DoctorCode();
+                   $tdata->email=$request->email;
+                   $tdata->code=bcrypt($code);
+                   $tdata->save();
+                   Session::put('ResetMail',$tdata->email);
+                   Session::put('ResetCode',$code);
+        
+                   //mail
+                  $maildata=$request->toArray();
+                 Mail::send('doctor.resetPass.mail',$maildata,function($massage) use ($maildata)
+                 {
+                 $massage->to($maildata['email']); 
+                 $massage->subject('Reset Your Password'); 
+        
+                 });
+
+////
+    return redirect('/DrCheckCode');
+            
+        }
+    }
+    else{
+        return redirect('/doctorLogin')->with('signup','Wrong email'); 
+    } 
+    
 }
 
-public function passwordReset(){
-    return view('doctor/resetPass/passowordReset');
+public function DrCheckCode(){
+
+    if(Session('reset')=='ok'){
+        return view('doctor/resetPass/passowordCode');
+        }
+    else{
+        return redirect('/doctorLogin');
+   } 	
+    
+}
+
+public function DrShowRepassword(){
+
+    if(Session('reset')=='ok'){
+        return view('doctor/resetPass/passowordReset');
+        }
+    else{
+        return redirect('/doctorLogin');
+   } 	
+    
 }
 
 
 
 
+public function passwordReset(Request $request){
 
+    if(Session('reset')=='ok'){
+        if($data =DoctorCode::where('email',Session('ResetMail'))->first()){
+            if(Hash::check($request->code,$data->code)){
+               
+             ///
+             return redirect('/DrShowRepass');
+
+            }
+             else{
+    return redirect('/DrCheckCode')->with('fail','Code Does not match '); 
+       
+        }
+        }
+
+        else{
+    return redirect('/DrCheckCode')->with('fail','Code Does not match '); 
+        }
+        
+        
+        }
+    
+    
+    
+        else{
+        return redirect('/doctorLogin');
+   } 
+    
+}
+
+
+public function DrChangePass(Request $request){
+    $this->val($request);
+   
+    $tdata=DoctorInfo::find(Session('DupID'));
+    $tdata->exists = true;
+    $tdata->id = Session('DupID'); 
+    $tdata->password=bcrypt($request->password);
+    $tdata->save();
+    session()->forget('DupID');
+    session()->forget('reset');
+    return redirect('/doctorLogin')->with('signup','Password Successfully Changed');
+
+
+}
+
+public function val($request){
+        return  $this->Validate($request, [
+              'password' => 'required|confirmed|max:255',
+              
+          ]);
+      }
 }

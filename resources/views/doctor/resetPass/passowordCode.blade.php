@@ -37,9 +37,13 @@
         <img src="{{asset('doctor/assets/img/doctorlogo.jpg')}}" id="logoimg" alt=" Logo" />
     </div>
     <div class="tab-content">
-              
+    
+   @if(Session('fail'))
+    <p class="alert alert-danger">{{Session('fail')}}</p>
+
+   @endif   
         <div id="login" class="tab-pane active">
-            <form action="{{url('/patient/resetPassword/showPage')}}" class="form-signin" method="POST">
+            <form action="{{url('/dr/resetPassword/showPage')}}" class="form-signin" method="POST">
               {{ csrf_field() }}
          <p class="text-muted text-center btn-block btn btn-primary btn-rect">
                     Verify Your Code   </p>
