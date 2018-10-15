@@ -31,12 +31,8 @@
       <td>{{ $phList->email }}</td>
       
       <td>
-                <a href="" class="btn btn-info" title="Product View">
+                <a href="{{ url('pharmacyDetails/'.$phList->id) }}" class="btn btn-info" title="Pharmacy Details View">
                     <span class="glyphicon glyphicon-eye-open"></span>
-                </a>
-                
-                <a href="" title="Product Delete" class="btn btn-danger ">
-                    <span class="glyphicon glyphicon-trash"></span>
                 </a>
             </td> 
     </tr>

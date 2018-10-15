@@ -296,4 +296,17 @@ public function val($request){
               
           ]);
       }
+
+      public function ShowPatientHistoryById($id){
+   
+
+    
+    $presById = DB::table('prescribtions')
+                ->join('doctorinfos', 'prescribtions.DrID', '=', 'doctorinfos.RegID')
+                ->join('patientinfos', 'prescribtions.nid', '=', 'patientinfos.nid')
+                ->select('prescribtions.*', 'doctorinfos.name', 'patientinfos.name')
+                ->where('prescribtions.id', $id)
+                ->first();
+        return view('doctor.home.presById', ['presId'=>$presById]);
+}
 }

@@ -7,12 +7,15 @@
 <link rel="stylesheet" type="text/css" href="{{asset('doctor/css/style.css')}}">
 
 </head>
-<body>
+<body >
 
 @include('doctor.includes.header')
 @include('doctor.includes.doctorInfo')
+<section id="main-content" style="min-height: 300px">
+      @yield('mainContent')
+    </section>
 
-@yield('mainContent')
+
 
 <!-- footer -->
 

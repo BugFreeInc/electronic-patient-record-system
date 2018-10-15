@@ -11,8 +11,10 @@
 
 @include('patient.includePatient.headerPatient')
 @include('patient.includePatient.patientInfo')
+<section id="main-content" style="min-height: 342px">
+     @yield('mainContent')
+    </section>
 
-@yield('mainContent')
 
 <!-- footer -->
 

@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <section id="container">
+  <section id="container"  >
    
     <!--header start-->
        @include('admin.includesAdmin.header_admin')
@@ -39,7 +39,7 @@
     <!--sidebar end-->
     
     <!--main content start-->
-    <section id="main-content">
+    <section id="main-content" style="min-height: 535px">
       <section class="wrapper">
     
                   @yield('maincontent')
