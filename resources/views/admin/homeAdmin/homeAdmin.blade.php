@@ -4,7 +4,7 @@
 
 	<div class="container">
 		<h3>
-			Welcome As A Admin
+			Welcome Admin
 		</h3>
 		
 	</div>
@@ -18,7 +18,7 @@
                   <canvas id="serverstatus01" height="100" width="100"></canvas>
                      <div class="col-md-3 w3layouts_stats_left w3_counter_grid">
 		   	<i class="fa fa-user-md" aria-hidden="true"></i>
-			<p class="counter">120</p>
+			<p class="counter">{{session('DrCount')}}</p>
 			<h3>Doctor</h3>
 		</div>
                   
@@ -34,7 +34,7 @@
                   <canvas id="serverstatus02" height="100" width="100"></canvas>
                   <div class="col-md-3 w3layouts_stats_left w3_counter_grid">
 		   	<i class="fa fa-medkit" aria-hidden="true"></i>
-			<p class="counter">120</p>
+			<p class="counter">{{session('PhCount')}}</p>
 			<h3>Pharmacy</h3>
 		</div>
                   
@@ -51,7 +51,7 @@
                   <canvas id="serverstatus01" height="100" width="100"></canvas>
                      <div class="col-md-3 w3layouts_stats_left w3_counter_grid">
 		   	<i class="fa fa-wheelchair" aria-hidden="true"></i>
-			<p class="counter">120</p>
+			<p class="counter">{{session('PaCount')}}</p>
 			<h3>Patient</h3>
 		</div>
                   <div class="row">

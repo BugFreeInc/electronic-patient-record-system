@@ -2,7 +2,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights 2018 <strong>BugFree</strong>. All Rights Reserved
+          &copy; Copyrights 2018 . All Rights Reserved to <strong>BugFree</strong>
         </p>
         <div class="credits">
        

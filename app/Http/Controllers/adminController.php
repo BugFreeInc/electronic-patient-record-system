@@ -21,6 +21,16 @@ class adminController extends Controller
     {
         $sms=contact::count();
         Session::put('sms',$sms);
+        
+        $DrCount=DoctorInfo::count();
+        Session::put('DrCount',$DrCount);
+        
+        $PhCount=PharmacyInfo::count();
+        Session::put('PhCount',$PhCount);
+       
+        $PaCount=PatientInfo::count();
+        Session::put('PaCount',$PaCount);
+           
         return view('admin.homeAdmin.homeAdmin');
         }
     else{
