@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<title>Pharmacy Home Page</title>
 
 @include('pharmacy.includesPharma.headerPharma')
 @include('pharmacy.includesPharma.pharmaInfo')

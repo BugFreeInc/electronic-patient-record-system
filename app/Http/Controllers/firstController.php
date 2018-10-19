@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\contact;
 use Session;
 use App\adminNotice;
+use App\DoctorInfo;
+use App\PharmacyInfo;
+use App\PatientInfo;
 use DB;
 class firstController extends Controller
 {
@@ -19,6 +22,14 @@ class firstController extends Controller
     }
 
     public function index(){
+         $DrCount=DoctorInfo::count();
+        Session::put('DrCount',$DrCount);
+        
+        $PhCount=PharmacyInfo::count();
+        Session::put('PhCount',$PhCount);
+       
+        $PaCount=PatientInfo::count();
+        Session::put('PaCount',$PaCount);
     	return view('frontEnd.home.homeContant');
     }
     public function doctorLogin(){

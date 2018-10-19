@@ -15,7 +15,7 @@
         <th>{{ $pharmaId->RegID }}</th>
     </tr>
     <tr>
-        <th>Oners Name</th>
+        <th>Owners Name</th>
         <th>{{ $pharmaId->OwnerName }}</th>
     </tr>
     <tr>

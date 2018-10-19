@@ -57,7 +57,7 @@
         </tr>
         <tr>
             <td colspan="5" style="text-align: left;">
-                <input type="submit" class="btn btn-lg btn-block" id="save" value="Save Info" />
+                <input type="submit" class="btn btn-lg btn-block" id="save" value="Assing Medicine" />
             </td>
         </tr>
     </tfoot>

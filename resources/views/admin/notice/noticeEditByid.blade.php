@@ -7,7 +7,7 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case text-center" >
-                    Add Notice<br>
+                    Update Notice<br>
                     <h3 class="text-center text-success">{{ Session::get('message') }}</h3>
                     
                   
@@ -30,7 +30,7 @@
                     </div>
                     
                     <div class="compose-btn">
-                      <button class="btn btn-theme btn-sm" type="submit"><i class="fa fa-check"></i> Save</button>
+                      <button class="btn btn-theme btn-sm" type="submit"><i class="fa fa-check"></i> Update Notice</button>
                       
                     </div>
                   </form>

@@ -200,6 +200,8 @@ return redirect('/adminNoticeAdd')->with('message','Notice save successfully');
     }
         public function adminNoticeEdit($id){
        $noticeEditById=adminNotice::where('id',$id)->first();
+
+
         return view('admin.notice.noticeEditByid',['noticeEditById'=>$noticeEditById]);
 
     }

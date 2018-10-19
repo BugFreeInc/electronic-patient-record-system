@@ -22,7 +22,10 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
+       
+
         <li><a href="{{url('/outPharma')}}"><button type="submit" class="btn btn-light" name="logout">Log Out</button></a></li>
+
        
       </ul>
     </div><!-- /.navbar-collapse -->

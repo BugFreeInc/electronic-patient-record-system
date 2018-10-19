@@ -11,7 +11,7 @@
     </tr>
     
     <tr>
-        <th>Govt. Natinal ID</th>
+        <th>Govt. National ID</th>
         <th>{{ $patientId->nid }}</th>
     </tr>
     <tr>

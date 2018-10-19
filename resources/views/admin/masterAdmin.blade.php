@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title> Admin Template</title>
+  <title> Admin </title>
 
   <!-- Favicons -->
   <link href="{{asset('admin/img/adminlogo.png')}}" rel="icon">

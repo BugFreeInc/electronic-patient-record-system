@@ -72,6 +72,8 @@ Route::post('/dr/resetPassword/showPage','doctorController@passwordReset');
 Route::get('/DrShowRepass','doctorController@DrShowRepassword');
 Route::post('/DrUpdatePass','doctorController@DrChangePass');
 Route::get('/showSinglePres/{id}','doctorController@ShowPatientHistoryById');
+
+
 //Doctor section end
 
 

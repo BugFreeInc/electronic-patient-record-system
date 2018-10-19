@@ -8,6 +8,7 @@
         <div class="" >
             <h3><b>{{$presId->DrName }}</b></h3>
             <h4>Reg. No: {{$presId->DrID }}</h4>
+            
            
            
             
@@ -20,9 +21,9 @@
     <section id="doctorinfo" class="">
         <div class="" >
            
-            <h3><b>Patient Name: </b>{{$presId->name }}</h3>
+            <h3><b>NID: {{$presId->nid }}</b></h3>
             
-            <h4>NID: {{$presId->nid }}</h4>
+       
             
         </div>
         
