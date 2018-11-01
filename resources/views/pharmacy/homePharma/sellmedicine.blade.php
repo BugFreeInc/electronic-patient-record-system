@@ -41,8 +41,9 @@
     <div class="col-md-8">
     
       <h3>Assing Medicine</h3>
+
       @if(session('sell'))
-      {{session('sell')}}
+      <h3 class="text-center text-success">{{ Session::get('sell') }}</h3>
       @endif
       <form action="{{url('/SellMed')}}" method="POST">
       @csrf
@@ -85,7 +86,7 @@
         </tr>
         <tr>
             <td colspan="5" style="text-align: left;">
-                <input type="submit" class="btn btn-lg btn-block " id="save" value="Save Info" />
+                <input type="submit" class="btn btn-lg btn-block " id="save" value="Sell Medicine" />
             </td>
         </tr>
     </tfoot>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-<title>Health Plus a Medical Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>EPRS BD</title>
 <!-- for-meta-tags-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

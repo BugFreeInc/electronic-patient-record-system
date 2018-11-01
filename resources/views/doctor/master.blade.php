@@ -8,7 +8,7 @@
 
 </head>
 <body >
-
+<title>Doctor Home Page</title>
 @include('doctor.includes.header')
 @include('doctor.includes.doctorInfo')
 <section id="main-content" style="min-height: 300px">

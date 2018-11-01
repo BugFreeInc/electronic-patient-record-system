@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<title>Patient Home Page</title>
 
 @include('patient.includePatient.headerPatient')
 @include('patient.includePatient.patientInfo')

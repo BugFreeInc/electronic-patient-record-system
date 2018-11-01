@@ -29,7 +29,7 @@
                     </div>
                     
                     <div class="compose-btn">
-                      <button class="btn btn-theme btn-sm" type="submit"><i class="fa fa-check"></i> Save</button>
+                      <button class="btn btn-theme btn-sm" type="submit"><i class="fa fa-check"></i> Add Notice</button>
                       
                     </div>
                   </form>
