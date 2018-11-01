@@ -26,7 +26,11 @@
   <div class="col-md-6">
     <span class="dot">
     <h4> Total Prescribe Patient</h4>
+<<<<<<< HEAD
     <h1><b>{{ Session('PaCount')}}</b></h1>
+=======
+    <h1><b>1</b></h1>
+>>>>>>> 835bfc864c6ade6f1801393bbe7fc3daf85fba26
   </span>
   </div>
   <div class="col-md-6">
